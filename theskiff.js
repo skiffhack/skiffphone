@@ -1,5 +1,5 @@
 var selection = menu(
-                    "Hi, I'm the Skiff telephone robot, how can I help you?",
+                    "Hi, I'm the Skiff telephone robot written in JavaScript, how can I help you?",
                     [
                         [meeting, "for meeting room bookings"],
                         [rickroll, "if this is a marketing call"],
@@ -26,7 +26,7 @@ function menu(greeting, options){
     }
     userInputs.substring(0, userInputs.length-1);
 
-    result = ask("<speak>There are " + options.length + " available</speak>",{ "choices" : userInputs, "attempts":1, "mode": "dtmf"});
+    result = ask("<speak>There are " + options.length + "  available</speak>",{ "choices" : userInputs, "attempts":1, "mode": "dtmf"});
     options[parseInt(result.value)][0]();
 
 }
