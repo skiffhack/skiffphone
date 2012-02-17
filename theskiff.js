@@ -25,6 +25,8 @@ function menu(options){
     userInputs.substring(0, userInputs.length-1);
 
     result = ask("<speak>There are " + options.length + " options available</speak>",{ "choices" : userInputs, "attempts":1, "mode": "dtmf"});
+    say(result.value)
+    say("next");
     say(parseInt(result.value));
     options[parseInt(result.value)][0]();
 }
