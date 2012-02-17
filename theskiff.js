@@ -1,20 +1,20 @@
-var selection = menu(
-                    "Hi, I'm the Skiff telephone robot, how can I help you?",
-                    [
-                        (1, meeting, "for meeting room bookings"),
-                        (2, rickroll, "if this is a marketing call"),
-                        (3, joining, "if you are interested in becoming a member of the skiff"),
-                        (4, skiff, "to speak to one of our members working at the Skiff now"),
-                        (5, buildbrighton, "if you wish to speak to someone at the Build Brighton hacker space"),
-                        (6, other, "for all other enquiries"),
-                        (9, urgent, "if you have an urgent problem")
-                    ]
-                );
-
 answer();
 wait(500);
 
 function menu(greeting, options){
+    var result,
+        userInputs = "";
+
+    say(greeting);
+    wait(1000);
+
+    for(var i=1; i == options.length; i++){
+        userInputs += i + ",";
+    }
+    userInputs.substring(0, str.length-1);
+
+    result = ask("<speak>There are " + options.length + " available</speak>",{ "choices" : userInputs, "attempts":1, "mode": "dtmf"});
+    options[parseInt(result.value)][0]();
 
 }
 
@@ -66,3 +66,16 @@ function urgent(){
     // #transfer(["+447766021485"]), {"callerID": "666"});
     // #transfer(["+447951261227"], {"callerID": "666", "network": "SMS"});
 }
+
+var selection = menu(
+                    "Hi, I'm the Skiff telephone robot, how can I help you?",
+                    [
+                        [meeting, "for meeting room bookings"],
+                        [rickroll, "if this is a marketing call"],
+                        [joining, "if you are interested in becoming a member of the skiff"],
+                        [skiff, "to speak to one of our members working at the Skiff now"],
+                        [buildbrighton, "if you wish to speak to someone at the Build Brighton hacker space"],
+                        [other, "for all other enquiries"],
+                        [urgent, "if you have an urgent problem"]
+                    ]
+                );
