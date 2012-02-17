@@ -1,6 +1,4 @@
-if(currentCall.initialText == "Yes") {
-	say("Awesome, I totally agree.");
-}
+say("A response!");
 
 /*if (currentCall.initialText == 'hello') {
 	say("Hell yourself.")
