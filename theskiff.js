@@ -1,6 +1,6 @@
 var greeting = "Hi, welcome to the skiff phone system",
-    menu([
-            [meeting, "for meeting room bookings"],
+    selection = menu([
+            ["meeting", "for meeting room bookings"],
             [rickroll, "if this is a marketing call"],
             [joining, "if you are interested in becoming a member of the skiff"],
             [skiff, "to speak to one of our members working at the Skiff now"],
