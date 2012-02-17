@@ -1,19 +1,3 @@
-say("A response!");
+say("UK Texting now works!");
 
-/*if (currentCall.initialText == 'hello') {
-	say("Hell yourself.")
-} else {
-	say("I don't understand.");
-}*/
-
-/*var methods = {
-	who: function() {
-		say('Valid method call.');
-	}
-};
-
-if (methods[currentCall.initialText] != undefined) {
-	say(methods[currentCall.initialText]());
-} else {
-	say("Not a valid method call.");
-}*/
+// Turns out UK numbers cannot receive texts at time of writing. Yes, it took me like an hour to work that out.
