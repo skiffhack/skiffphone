@@ -1,8 +1,12 @@
-if (currentCall.initialText == 'hello') {
+if(currentCall.initialText == "Yes") {
+	say("Awesome, I totally agree.");
+}
+
+/*if (currentCall.initialText == 'hello') {
 	say("Hell yourself.")
 } else {
 	say("I don't understand.");
-}
+}*/
 
 /*var methods = {
 	who: function() {
