@@ -27,8 +27,8 @@ function menu(greeting, options){
     userInputs.substring(0, userInputs.length-1);
 
     result = ask("<speak>There are " + options.length + " options available</speak>",{ "choices" : userInputs, "attempts":1, "mode": "dtmf"});
+    say(parseInt(result.value));
     options[parseInt(result.value)][0]();
-
 }
 
 function meeting(){
