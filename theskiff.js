@@ -1,20 +1,18 @@
-var selection = menu(
-                    "Hi, I'm the Skiff telephone robot written in JavaScript, how can I help you?",
-                    [
-                        [meeting, "for meeting room bookings"],
-                        [rickroll, "if this is a marketing call"],
-                        [joining, "if you are interested in becoming a member of the skiff"],
-                        [skiff, "to speak to one of our members working at the Skiff now"],
-                        [buildbrighton, "if you wish to speak to someone at the Build Brighton hacker space"],
-                        [other, "for all other enquiries"],
-                        [urgent, "if you have an urgent problem"]
-                    ]
-                );
+var greeting = "Hi, welcome to the skiff phone system",
+    menu([
+            [meeting, "for meeting room bookings"],
+            [rickroll, "if this is a marketing call"],
+            [joining, "if you are interested in becoming a member of the skiff"],
+            [skiff, "to speak to one of our members working at the Skiff now"],
+            [buildbrighton, "if you wish to speak to someone at the Build Brighton hacker space"],
+            [other, "for all other enquiries"],
+            [urgent, "if you have an urgent problem"]
+        ]);
 
 answer();
 wait(500);
 
-function menu(greeting, options){
+function menu(options){
     var result,
         userInputs = "";
 
