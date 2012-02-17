@@ -1,6 +1,6 @@
 var greeting = "Hi, welcome to the skiff phone system",
     selection = menu([
-            ["meeting", "for meeting room bookings"],
+            [meeting, "for meeting room bookings"],
             [rickroll, "if this is a marketing call"],
             [joining, "if you are interested in becoming a member of the skiff"],
             [skiff, "to speak to one of our members working at the Skiff now"],
@@ -25,9 +25,8 @@ function menu(options){
     userInputs.substring(0, userInputs.length-1);
 
     result = ask("<speak>There are " + options.length + " options available</speak>",{ "choices" : userInputs, "attempts":1, "mode": "dtmf"});
-    say(result.value)
-    say("next");
-    say(parseInt(result.value));
+    log("daddasdgeurynfd " + result);
+    log("daddasdgeurynfd " + result.value);
     options[parseInt(result.value)][0]();
 }
 
