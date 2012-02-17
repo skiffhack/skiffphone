@@ -7,15 +7,12 @@ result = ask("Welcome to the Tropo company directory. Who are you trying to reac
 if (result.value == "1")
     {
            say("Connecting you to Jason");
-           transfer("+14155550100");
     }
 if (result.value == "2")
     {
            say("Connecting you to Adam");
-           transfer("+19165550100");
     }
 if (result.value == "3")
     {
            say("Connecting you to Jose");
-           transfer("+14075550100");
     }
