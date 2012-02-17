@@ -1,3 +1,16 @@
+var selection = menu(
+                    "Hi, I'm the Skiff telephone robot, how can I help you?",
+                    [
+                        [meeting, "for meeting room bookings"],
+                        [rickroll, "if this is a marketing call"],
+                        [joining, "if you are interested in becoming a member of the skiff"],
+                        [skiff, "to speak to one of our members working at the Skiff now"],
+                        [buildbrighton, "if you wish to speak to someone at the Build Brighton hacker space"],
+                        [other, "for all other enquiries"],
+                        [urgent, "if you have an urgent problem"]
+                    ]
+                );
+
 answer();
 wait(500);
 
@@ -11,7 +24,7 @@ function menu(greeting, options){
     for(var i=1; i == options.length; i++){
         userInputs += i + ",";
     }
-    userInputs.substring(0, str.length-1);
+    userInputs.substring(0, userInputs.length-1);
 
     result = ask("<speak>There are " + options.length + " available</speak>",{ "choices" : userInputs, "attempts":1, "mode": "dtmf"});
     options[parseInt(result.value)][0]();
@@ -66,16 +79,3 @@ function urgent(){
     // #transfer(["+447766021485"]), {"callerID": "666"});
     // #transfer(["+447951261227"], {"callerID": "666", "network": "SMS"});
 }
-
-var selection = menu(
-                    "Hi, I'm the Skiff telephone robot, how can I help you?",
-                    [
-                        [meeting, "for meeting room bookings"],
-                        [rickroll, "if this is a marketing call"],
-                        [joining, "if you are interested in becoming a member of the skiff"],
-                        [skiff, "to speak to one of our members working at the Skiff now"],
-                        [buildbrighton, "if you wish to speak to someone at the Build Brighton hacker space"],
-                        [other, "for all other enquiries"],
-                        [urgent, "if you have an urgent problem"]
-                    ]
-                );
